@@ -4,7 +4,6 @@ This Arduino library demonstrates basic Xbus communication between an Arduino an
 
 For further guidance on using this example code, please refer to [Xsens BASE](https://base.xsens.com/s/article/Interfacing-the-MTi-1-series-DK-with-an-Arduino?language=en_US).
 
-
 ## Tested hardware ##
 **Arduino:**
 * Uno
@@ -13,7 +12,6 @@ For further guidance on using this example code, please refer to [Xsens BASE](ht
 * MTi-3-DK
 * MTi-7-DK
 * MTi-8-DK
-
 
 ## Setup ##
 At least the following hardware connections are required:
@@ -28,5 +26,10 @@ Additionally, make sure to:
 * Supply the MTi-#-DK with 3.3V (since 5V will force USB mode)
 * Add 2.7 kOhm pullup resistors to the SCL/SDA lines (only for MTi-#-DK board Rev 2.3 or older - newer revisions come with onboard pullup resistors)
 
-
+## Functionality ##
+After connecting with an MTi 1-series device, the example code will request device information (product code and firmware version). It will then continue to configure the outputs of the MTi (1 Hz default, 10 Hz selectable):
+* MTi-1: RateOfTurn and Acceleration
+* MTi-2/3: EulerAngles
+* MTi-7/8: EulerAngles and Latitude/Longitude
+After configuring, the MTi will be forced into Measurement mode and the received data will be printed to the serial monitor. 
 
