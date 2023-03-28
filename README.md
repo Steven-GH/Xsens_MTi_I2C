@@ -31,5 +31,6 @@ After connecting with an MTi 1-series device, the example code will request devi
 * MTi-1: RateOfTurn and Acceleration
 * MTi-2/3: EulerAngles
 * MTi-7/8: EulerAngles and Latitude/Longitude
+
 After configuring, the MTi will be forced into Measurement mode and the received data will be printed to the serial monitor. 
 
