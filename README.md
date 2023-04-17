@@ -7,6 +7,7 @@ For further guidance on using this example code, please refer to [Xsens BASE](ht
 ## Tested hardware ##
 **Arduino:**
 * Uno
+* Due
 
 **Xsens MTi:**
 * MTi-3-DK
