@@ -41,9 +41,9 @@ void MTi::configureOutputs() {
   } else if (xbus.productCode == '2' | xbus.productCode == '3') {//"MTi-2 VRU or MTi-3 AHRS
     Serial.println("Configuring Euler angles at 1 Hz.");
     uint8_t outputConfig[] = {0xC0, 0x04, 0x20, 0x30, 0x00, 0x01};                            //setOutputConfiguration Xbus message with Data field 0x20 0x30 0x00 0x01 (EulerAngles, 32-bit float, at 1 Hz)
-    Serial.println("Configuring Euler angles at 10 Hz.");
+    //Serial.println("Configuring Euler angles at 10 Hz.");
     //uint8_t outputConfig[] = {0xC0, 0x04, 0x20, 0x30, 0x00, 0x0A};                          //setOutputConfiguration Xbus message with Data field 0x20 0x30 0x00 0x01 (EulerAngles, 32-bit float, at 10 Hz)
-    //sendMessage(outputConfig, sizeof(outputConfig));
+    sendMessage(outputConfig, sizeof(outputConfig));
 
   } else if (xbus.productCode == '7' | xbus.productCode == '8') {//"MTi-7 or MTi-8 GNSS/INS
     Serial.println("Configuring Euler Angles and Latitude/Longitude at 1 Hz.");
@@ -51,6 +51,7 @@ void MTi::configureOutputs() {
     //Serial.println("Configuring Euler Angles and Latitude/Longitude at 10 Hz.");
     //uint8_t outputConfig[] = {0xC0, 0x08, 0x50, 0x40, 0x00, 0x0A, 0x20, 0x30, 0x00, 0x0A};  //setOutputConfiguration Xbus message with Data fields 0x50 0x40 0x00 0x01 / 0x20 0x30 0x00 0x01 (LatLon/EulerAngles, 32-bit float, at 10 Hz)
     sendMessage(outputConfig, sizeof(outputConfig));
+    
   } else {
     Serial.println("Could not configure device. Device's product code is unknown.");
   }

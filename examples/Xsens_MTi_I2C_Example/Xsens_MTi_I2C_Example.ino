@@ -26,7 +26,7 @@ MTi *MyMTi = NULL;
 
 
 void setup() {
-  Serial.begin(9600);               //Initialize communication for serial monitor output (Ctrl+Shift+M)
+  Serial.begin(115200);             //Initialize communication for serial monitor output (Ctrl+Shift+M)
   Wire.begin();                     //Initialize Wire library for I2C communication
   pinMode(DRDY, INPUT);             //Data Ready pin, indicates whether data/notifications are available to be read
 
